@@ -24,6 +24,11 @@ temporary source checkouts. It never installs submitted dependencies, invokes bu
 daemon or team. The job has a read-only token and checkout does not persist credentials. Source fetches and validator
 processes each have a two-minute timeout; the job is capped at ten minutes. Every submission is checked on each run,
 including unchanged submissions; branch and tag results are bound to the resolved commit shown in that run.
+The check has time limits but no repository-size cap: a repository too large for the runner fails at its limits,
+rather than with a named size error.
+
+At each OpenRig release, maintainers must revisit the pinned validator version and the labels synchronized with it.
+Update the pin and its labels through a normal reviewed pull request.
 
 Findings and fetch/validator errors fail the job. `not_checked` results remain visible in its JSON summary; a pass
 does not establish README quality, absence of arbitrary secrets, or runtime behaviour. Maintainer review still
