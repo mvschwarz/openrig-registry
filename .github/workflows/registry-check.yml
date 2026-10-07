@@ -1,5 +1,5 @@
 # Checks registry entries, behaviour views, journeys and the generated status file. It parses files in this
-# repository only: nothing a submission contains is fetched, installed or run, and the job holds a read-only token.
+# repository only. The separate bundle job fetches submitted source for validation, never installs or launches it.
 name: Registry check
 
 on:
@@ -27,3 +27,30 @@ jobs:
       - run: npm ci --ignore-scripts --no-audit --no-fund
       - run: node --test test/*.test.mjs
       - run: node registry-check.mjs
+
+  bundles:
+    name: Submitted bundle check
+    needs: check
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: tools
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 22
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Install the published validator (no lifecycle scripts)
+        run: npm install --prefix "$RUNNER_TEMP/bundle-validator" --ignore-scripts --no-audit --no-fund @openrig/cli@0.6.6
+      - name: Exercise source validation without installing or launching a bundle
+        run: node --test ci/bundle-check.test.mjs
+        env:
+          RIG_BIN: ${{ runner.temp }}/bundle-validator/node_modules/.bin/rig
+      - name: Check submitted bundles
+        run: node ci/bundle-check.mjs
+        env:
+          RIG_BIN: ${{ runner.temp }}/bundle-validator/node_modules/.bin/rig

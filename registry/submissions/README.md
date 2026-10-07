@@ -9,7 +9,13 @@ folder: rigs/my-team   # the folder holding rig.yaml; "." for the repository roo
 ref: main              # a branch, tag or commit
 ```
 
-The registry check accepts it and says "Submission received". A maintainer then pins your link to an exact commit,
+The registry check accepts it and says "Submission received". The **Submitted bundle check** job then fetches that
+ref and runs `rig bundle check` using OpenRig 0.6.6. Its PR annotation and job summary show the resolved commit,
+findings and checks left unverified. Findings or an unreadable source fail the check. The job does not install
+dependencies from the bundle, run its scripts, or launch its team. To check before submitting, run
+`rig bundle check <folder>` locally.
+
+A maintainer then pins your link to an exact commit,
 reviews the bundle, writes the full entry in `registry/`, and removes this file. If it isn't listed, you get a short
 reply saying why.
 
