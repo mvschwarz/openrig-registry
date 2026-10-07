@@ -2,11 +2,13 @@
 
 Small Node programs that check the registry and generate its public status. They read files in this repository
 and, for the generator, run records and receipts on the machine running it. They do not fetch, install or run
-anything a submitted bundle contains.
+anything a submitted bundle contains. The separate CI bundle validator downloads source as data for the published
+CLI's read-only check; it does not execute bundle scripts.
 
 | Program | What it does | Where it runs |
 |---|---|---|
 | `registry-check.mjs` | Checks `registry/*.yaml`, each entry's behaviour views, `registry/submissions/`, `status/journeys/` and `status/status.json` | CI on every pull request and push to main |
+| `ci/bundle-check.mjs` | Fetches each submission's ref, records its exact commit, then runs `rig bundle check <folder> --json` | A separate CI job on every pull request and push to main |
 | `status.mjs` | Generates `status/status.json` from run records, or checks that the committed file equals regenerated output | Wherever the run records and their receipts are kept |
 
 ```sh
@@ -16,6 +18,22 @@ node registry-check.mjs
 node status.mjs generate --records <folder> [--records <folder> ...]
 node status.mjs check --records <folder> [--records <folder> ...]
 ```
+
+The bundle job installs exactly `@openrig/cli@0.6.6` with lifecycle scripts disabled, then runs the checks against
+temporary source checkouts. It never installs submitted dependencies, invokes bundle startup actions, or launches a
+daemon or team. The job has a read-only token and checkout does not persist credentials. Source fetches and validator
+processes each have a two-minute timeout; the job is capped at ten minutes. Every submission is checked on each run,
+including unchanged submissions; branch and tag results are bound to the resolved commit shown in that run.
+The check has time limits but no repository-size cap: a repository too large for the runner fails at its limits,
+rather than with a named size error.
+
+At each OpenRig release, maintainers must revisit the pinned validator version and the labels synchronized with it.
+Update the pin and its labels through a normal reviewed pull request.
+
+Findings and fetch/validator errors fail the job. `not_checked` results remain visible in its JSON summary; a pass
+does not establish README quality, absence of arbitrary secrets, or runtime behaviour. Maintainer review still
+decides listing. The integration controls in `ci/bundle-check.test.mjs` use local Git transport and the same installed
+CLI. To run them, set `RIG_BIN` to the validator executable and run `node --test ci/bundle-check.test.mjs`.
 
 ## Formats
 
