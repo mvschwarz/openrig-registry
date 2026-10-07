@@ -1,5 +1,5 @@
 {
-  "bodyDigest": "d0595ef3b4ad8ec38fd72b86af8cdab6365625bce3842a7418fd40f9cb34ca86",
+  "bodyDigest": "e16dc8df0175c905187ae8cfd00f6dfb76641b939c2a91ee02a3f5a232325b8e",
   "generated": {
     "by": "openrig-world tools/status.mjs",
     "generatorVersion": 1,
@@ -14,6 +14,15 @@
     "factory-rsi": {
       "configurations": {
         "build.implementer=claude-code,check.qa=codex,dogfood.tester=codex,orch.lead=claude-code,plan.planner=claude-code,release.manager=claude-code,review.reviewer=codex": {
+          "communityReports": 0,
+          "platforms": {}
+        }
+      },
+      "state": "ok"
+    },
+    "test-listing-018": {
+      "configurations": {
+        "dev.build=claude-code,dev.qa=claude-code,dev.review=codex,orch.lead=codex": {
           "communityReports": 0,
           "platforms": {}
         }
