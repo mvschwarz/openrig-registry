@@ -23,5 +23,5 @@ missing or describe another package, and a status file that was edited by hand.
 Add `registry/submissions/<your-team>.yaml` with three fields (see `submissions/README.md`): your repository, the
 folder holding `rig.yaml`, and a branch, tag or commit. The registry check accepts it and says "Submission received".
 The separate bundle check fetches the submitted revision and reports its `rig bundle check` results without
-installing or launching it. A maintainer then writes the full entry here, at a pinned commit, and removes the submission. A submission is never
-listed: the site and the status file read only the entries in this folder.
+installing or launching it. A maintainer then writes the full entry here, at a pinned commit, and removes the
+submission. A submission is never listed: the site and the status file read only the entries in this folder.

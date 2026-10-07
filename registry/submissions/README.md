@@ -15,9 +15,8 @@ findings and checks left unverified. Findings or an unreadable source fail the c
 dependencies from the bundle, run its scripts, or launch its team. To check before submitting, run
 `rig bundle check <folder>` locally.
 
-A maintainer then pins your link to an exact commit,
-reviews the bundle, writes the full entry in `registry/`, and removes this file. If it isn't listed, you get a short
-reply saying why.
+A maintainer then pins your link to an exact commit, reviews the bundle, writes the full entry in `registry/`, and
+removes this file. If it isn't listed, you get a short reply saying why.
 
 Rig names on openrig.dev/rigs are unique. If `registry/<your-team>.yaml` already exists, the check still passes but
 says the name is taken; rename your file to a distinct one, for example `<taken-name>-<your-name>.yaml`.
