@@ -1,0 +1,54 @@
+schema: openrig.registry-entry/v1
+slug: workshop
+name: Workshop
+summary: "One four-seat software team: a Codex lead and reviewer, Claude Code
+  builder and QA by default. The installing agent selects available runtimes
+  while keeping the workshop name and one install directory."
+source:
+  repository: https://github.com/mvschwarz/openrig-world
+  folder: rigs/workshop
+  resolvedCommit: 8b22d918340504ec2e01889a00b07c71195c459f
+  requestedRef: 8b22d918340504ec2e01889a00b07c71195c459f
+configurations:
+  - id: dev.build=claude-code,dev.qa=claude-code,dev.review=codex,orch.lead=codex
+    alias: recommended
+    recommended: true
+    packageDigest:
+      algorithm: sha256
+      value: e2ea21e9867cb353fb06c08596c336ca08a9281c3fc231f9439d3d09cc7cc13d
+      coverage: openrig.package-digest/v1
+    assembler:
+      openrigVersion: 0.6.6
+    behaviour: views/workshop/dev.build-claude-code_dev.qa-claude-code_dev.review-codex_orch.lead-codex.0.6.6.json
+  - id: dev.build=claude-code,dev.qa=claude-code,dev.review=claude-code,orch.lead=claude-code
+    alias: all-claude
+    packageDigest:
+      algorithm: sha256
+      value: 6bdb19e2e35e6da9808dc6c232b6fb10c28ba16b2a09dc2a5eb07c6cbfff5ad4
+      coverage: openrig.package-digest/v1
+    assembler:
+      openrigVersion: 0.6.6
+    behaviour: views/workshop/dev.build-claude-code_dev.qa-claude-code_dev.review-claude-code_orch.lead-claude-code.0.6.6.json
+  - id: dev.build=codex,dev.qa=codex,dev.review=codex,orch.lead=codex
+    alias: all-codex
+    packageDigest:
+      algorithm: sha256
+      value: aed47f1207c528b5aa4f95532d7aad0a7564178aefc3bb0db7343cf07457a502
+      coverage: openrig.package-digest/v1
+    assembler:
+      openrigVersion: 0.6.6
+    behaviour: views/workshop/dev.build-codex_dev.qa-codex_dev.review-codex_orch.lead-codex.0.6.6.json
+  - id: dev.build=pi,dev.qa=pi,dev.review=pi,orch.lead=pi
+    alias: all-pi
+    packageDigest:
+      algorithm: sha256
+      value: a8658fd3e06b3df76730b42ed84ddaf28677829815da1f370c76b1c885dc44e5
+      coverage: openrig.package-digest/v1
+    assembler:
+      openrigVersion: 0.6.6
+    behaviour: views/workshop/dev.build-pi_dev.qa-pi_dev.review-pi_orch.lead-pi.0.6.6.json
+review:
+  date: 2026-10-06
+  note: Reviewed for listing. Validation and plan checks are not native runtime
+    proof or a security audit.
+status: listed
