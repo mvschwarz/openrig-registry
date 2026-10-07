@@ -21,6 +21,7 @@ function materialize({ entry: listing = entry(), files }) {
   fs.writeFileSync(path.join(root, "registry", `${listing.slug}.yaml`), JSON.stringify(listing, null, 2));
   fs.cpSync(path.join(REPO, "status", "journeys"), path.join(root, "status", "journeys"), { recursive: true });
   const records = path.join(dir, "records");
+  fs.mkdirSync(records);
   files.forEach((file, i) => {
     const run = path.join(records, `run-${i}`);
     const group = path.join(run, "run-records", file.group);
