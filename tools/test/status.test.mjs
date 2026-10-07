@@ -21,6 +21,7 @@ function materialize({ entry: listing = entry(), files }) {
   fs.writeFileSync(path.join(root, "registry", `${listing.slug}.yaml`), JSON.stringify(listing, null, 2));
   fs.cpSync(path.join(REPO, "status", "journeys"), path.join(root, "status", "journeys"), { recursive: true });
   const records = path.join(dir, "records");
+  fs.mkdirSync(records);
   files.forEach((file, i) => {
     const run = path.join(records, `run-${i}`);
     const group = path.join(run, "run-records", file.group);
@@ -145,9 +146,44 @@ test("release versions order prereleases by SemVer", () => {
   assert.ok(compareVersions("0.6.7+b", "0.6.6") > 0);
 });
 
-test("records for a slug with no listed entry are reported, not labelled", () => {
+test("records for a slug with no registry entry are reported, not labelled", () => {
   const result = run({ files: [{ group: "other-team", record: team("r1") }] });
   assert.deepEqual(result.problems, []);
   assert.ok(result.warnings.some((w) => w.includes("other-team")));
   assert.deepEqual(Object.keys(result.status.listings), ["team"]);
+});
+
+
+test("the page index includes every listed and withdrawn entry, but no submissions", () => {
+  const { dir, root, records } = materialize({ files: [] });
+  try {
+    const other = { ...entry(), slug: "another-team" };
+    const withdrawn = { ...entry(), slug: "retired-team", status: "withdrawn", withdrawnOn: "2026-10-07" };
+    for (const listing of [other, withdrawn]) {
+      fs.writeFileSync(path.join(root, "registry", `${listing.slug}.yaml`), JSON.stringify(listing));
+    }
+    fs.mkdirSync(path.join(root, "registry", "submissions"));
+    fs.writeFileSync(path.join(root, "registry", "submissions", "pending-team.yaml"), JSON.stringify({
+      repository: "https://github.com/example/rigs", folder: "team", ref: "main",
+    }));
+    const result = generate({ root, recordRoots: [records] });
+    assert.deepEqual(result.problems, []);
+    assert.deepEqual(result.unavailable, []);
+    assert.deepEqual(Object.keys(result.status.listings).sort(), ["another-team", "retired-team", "team"]);
+    for (const listing of Object.values(result.status.listings)) {
+      assert.deepEqual(listing, { state: "ok", configurations: { [MIX]: { platforms: {}, communityReports: 0 } } });
+    }
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test("withdrawing a listing retains its historical evidence without an unused-record warning", () => {
+  const files = [{ group: "team", record: team("r1") }];
+  const listed = run({ files });
+  const withdrawn = run({ entry: { ...entry(), status: "withdrawn", withdrawnOn: "2026-10-07" }, files });
+  assert.deepEqual(withdrawn.problems, []);
+  assert.deepEqual(withdrawn.unavailable, []);
+  assert.deepEqual(withdrawn.warnings, []);
+  assert.deepEqual(withdrawn.status.listings, listed.status.listings);
 });

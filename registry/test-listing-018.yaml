@@ -1,0 +1,26 @@
+schema: openrig.registry-entry/v1
+slug: test-listing-018
+name: Test listing 018
+summary: Test listing for OpenRig 0.6.7 slice 18
+source:
+  repository: https://github.com/mvschwarz/openrig-world
+  folder: rigs/workshop
+  resolvedCommit: 8b22d918340504ec2e01889a00b07c71195c459f
+  requestedRef: 8b22d918340504ec2e01889a00b07c71195c459f
+configurations:
+  - id: dev.build=claude-code,dev.qa=claude-code,dev.review=codex,orch.lead=codex
+    alias: recommended
+    recommended: true
+    packageDigest:
+      algorithm: sha256
+      value: e2ea21e9867cb353fb06c08596c336ca08a9281c3fc231f9439d3d09cc7cc13d
+      coverage: openrig.package-digest/v1
+    assembler:
+      openrigVersion: 0.6.6
+    behaviour: views/test-listing-018/dev.build-claude-code_dev.qa-claude-code_dev.review-codex_orch.lead-codex.0.6.6.json
+review:
+  date: 2026-10-07
+  note: Temporary listing for scheduled discovery verification. Reuses the
+    Workshop package reviewed on 2026-10-06. Listing review is not native
+    runtime proof or a security audit.
+status: listed

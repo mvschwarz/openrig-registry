@@ -26,8 +26,8 @@ export function generate({ root = REPO, recordRoots }) {
 
   const entries = registry.map((item) => item.entry);
   const { teamFiles, harnessFiles, warnings } = loadRecords(recordRoots, validators);
-  const listed = new Set(entries.filter((e) => e.status === "listed").map((e) => e.slug));
-  for (const slug of teamFiles.keys()) if (!listed.has(slug)) warnings.push(`records for ${slug}, which has no listed registry entry, were not used`);
+  const registered = new Set(entries.map((e) => e.slug));
+  for (const slug of teamFiles.keys()) if (!registered.has(slug)) warnings.push(`records for ${slug}, which has no registry entry, were not used`);
 
   const { status, problems: unavailable } = deriveStatus({ entries, teamFiles, harnessFiles, journeys });
   if (!validators.status(status)) problems.push(`the generated status is not bundle-status v1: ${schemaError(validators.status)}`);

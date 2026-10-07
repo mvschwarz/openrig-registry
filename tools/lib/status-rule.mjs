@@ -31,7 +31,8 @@ const environmentOf = (r) => `${r.record.environment.platform}-${r.record.enviro
 export function deriveStatus({ entries, teamFiles, harnessFiles, journeys }) {
   const problems = [];
   const listings = {};
-  for (const entry of entries.filter((e) => e.status === "listed")) {
+  // The site uses these keys as its page index; withdrawn entries still need their detail pages.
+  for (const entry of entries) {
     const derived = deriveListing(entry, teamFiles.get(entry.slug) ?? [], journeys);
     if (derived.problem) {
       problems.push(`${entry.slug}: ${derived.problem}`);
