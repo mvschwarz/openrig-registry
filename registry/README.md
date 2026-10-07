@@ -10,7 +10,9 @@ Each file here lists one rig bundle on openrig.dev/rigs. An entry records exactl
 Format: `registry-entry.v1` in the OpenRig repository's `docs/reference/bundle-formats.md`.
 
 The site shows only `listed` entries, at their recorded commit. A later push to the bundle's branch changes nothing
-here until an update is reviewed and merged. A withdrawn entry leaves the lists.
+here until an update is reviewed and merged. A withdrawn entry leaves the lists, but keeps its detail page with the withdrawal date.
+The generated `status/status.json` includes every registry entry, including withdrawn entries, so the site can
+discover those pages. Submissions are not included.
 
 Every listing carries the line: "Reviewed for listing on <date> at commit <short>. Review is not a security audit."
 
