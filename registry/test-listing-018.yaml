@@ -17,7 +17,7 @@ configurations:
       coverage: openrig.package-digest/v1
     assembler:
       openrigVersion: 0.6.6
-    behaviour: views/workshop/dev.build-claude-code_dev.qa-claude-code_dev.review-codex_orch.lead-codex.0.6.6.json
+    behaviour: views/test-listing-018/dev.build-claude-code_dev.qa-claude-code_dev.review-codex_orch.lead-codex.0.6.6.json
 review:
   date: 2026-10-07
   note: Temporary listing for scheduled discovery verification. Reuses the
