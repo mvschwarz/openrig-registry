@@ -5,6 +5,7 @@ import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { test } from "node:test";
 import { checkSubmission, checkSubmissions, report } from "./bundle-check.mjs";
+import { readYaml } from "../lib/load.mjs";
 
 const SPEC = `version: "0.2"
 name: validator-fixture
@@ -48,8 +49,64 @@ function fixture(t) {
   fs.mkdirSync(path.join(registry, "registry", "submissions"), { recursive: true });
   const submission = { repository: "https://github.com/example/team", folder: ".", ref: "main" };
   const writeSubmission = (value = submission) => fs.writeFileSync(path.join(registry, "registry/submissions/team.yaml"), JSON.stringify(value));
-  return { root, source, git, commit, marker, registry, submission, writeSubmission };
+  const writeEntry = (slug, { ref = commit, status = "listed" } = {}) => {
+    const entry = readYaml(new URL("../test/fixtures/registry-valid.yaml", import.meta.url));
+    Object.assign(entry, { slug, name: "A display title", status });
+    entry.source = { repository: submission.repository, folder: ".", resolvedCommit: ref };
+    if (status === "withdrawn") entry.withdrawnOn = "2026-10-08";
+    fs.writeFileSync(path.join(registry, "registry", `${slug}.yaml`), JSON.stringify(entry));
+  };
+  return { root, source, git, commit, marker, registry, submission, writeSubmission, writeEntry };
 }
+
+test("a colliding submission passes with a maintainer notice in output and summary", t => {
+  const f = fixture(t); f.writeEntry("existing"); f.writeSubmission();
+  const results = checkSubmissions(f.registry);
+  const submitted = results.find(r => r.file === "registry/submissions/team.yaml");
+  assert.equal(submitted.status, 0, JSON.stringify(results));
+  assert.match(submitted.notice, /validator-fixture.*registry\/submissions\/team.yaml.*registry\/existing.yaml/);
+  assert.match(submitted.notice, /Installing both listings on one machine/);
+  assert.match(submitted.notice, /For this submission, choose a different name/);
+  const established = results.find(r => r.file === "registry/existing.yaml");
+  assert.doesNotMatch(established.notice, /choose a different name/);
+  const output = []; const summary = path.join(f.root, "clash-summary.md");
+  assert.equal(report(results, { log: s => output.push(s), summary, actions: true }), 0);
+  assert.equal(output.filter(line => line.startsWith("::notice")).length, 2);
+  assert.ok(output.every(line => !line.startsWith("::error")));
+  assert.match(fs.readFileSync(summary, "utf8"), /Maintainer review: installed-name clashes/);
+  assert.match(fs.readFileSync(summary, "utf8"), /Installing both listings on one machine/);
+  assert.equal(fs.existsSync(f.marker), false);
+});
+
+test("two complete entries with the same installed rig name pass with informational notices", t => {
+  const f = fixture(t); f.writeEntry("first"); f.writeEntry("second");
+  const results = checkSubmissions(f.registry);
+  assert.equal(results.length, 2);
+  assert.ok(results.every(r => r.status === 0 && /validator-fixture/.test(r.notice)), JSON.stringify(results));
+  assert.ok(results.every(r => !/choose a different name/.test(r.notice)));
+  assert.equal(report(results, { log() {}, summary: null, actions: false }), 0);
+  assert.equal(fs.existsSync(f.marker), false);
+});
+
+test("names come from the pinned rig, not a display title or moving branch", t => {
+  const f = fixture(t); f.writeEntry("first");
+  fs.writeFileSync(path.join(f.source, "rig.yaml"), SPEC.replace("name: validator-fixture", "name: other-team"));
+  f.git("add", "."); f.git("commit", "-qm", "Another installed name");
+  f.writeEntry("second", { ref: f.git("rev-parse", "HEAD") });
+  const results = checkSubmissions(f.registry);
+  assert.deepEqual(results.map(r => r.rigName), ["validator-fixture", "other-team"]);
+  assert.ok(results.every(r => r.status === 0), JSON.stringify(results));
+  assert.ok(results.every(r => !r.notice));
+});
+
+test("an update of the same listing and a withdrawn name do not collide", t => {
+  const f = fixture(t); f.writeEntry("team"); f.writeEntry("retired", { status: "withdrawn" }); f.writeSubmission();
+  const results = checkSubmissions(f.registry);
+  assert.equal(results.length, 2);
+  assert.ok(results.every(r => r.status === 0), JSON.stringify(results));
+  assert.ok(results.every(r => r.rigName === "validator-fixture"));
+  assert.ok(results.every(r => !r.notice));
+});
 
 test("a submitted branch reaches the real CLI, preserves not_checked, and executes no source scripts", t => {
   const f = fixture(t); f.writeSubmission();
@@ -114,4 +171,17 @@ test("no submissions pass without fetching, and CI output quotes authored text",
   assert.match(output[1], /%0A%3A%3Anotice/);
   assert.equal(fs.readFileSync(summary, "utf8").match(/```/g).length, 2);
   assert.doesNotMatch(fs.readFileSync(summary, "utf8"), /<script>/);
+});
+
+test("advisory output escapes authored text without hiding actual failures", t => {
+  const f = fixture(t); const output = []; const summary = path.join(f.root, "notice-summary.md");
+  const notice = { file: "registry/team.yaml", status: 0, notice: "clash\n::error::forged\n```\n<script>" };
+  assert.equal(report([notice], { log: s => output.push(s), summary, actions: true }), 0);
+  assert.ok(output.every(line => !line.includes("\n")));
+  assert.match(output[1], /^::notice.*%0A%3A%3Aerror/);
+  const text = fs.readFileSync(summary, "utf8");
+  assert.equal(text.match(/```/g).length, 4);
+  assert.doesNotMatch(text, /<script>/);
+  assert.equal(report([notice, { file: "registry/submissions/bad.yaml", status: 1, error: "Source could not be read" }],
+    { log() {}, summary: null, actions: false }), 1);
 });

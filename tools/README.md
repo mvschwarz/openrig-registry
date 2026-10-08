@@ -8,7 +8,7 @@ CLI's read-only check; it does not execute bundle scripts.
 | Program | What it does | Where it runs |
 |---|---|---|
 | `registry-check.mjs` | Checks `registry/*.yaml`, each entry's behaviour views, `registry/submissions/`, `status/journeys/` and `status/status.json` | CI on every pull request and push to main |
-| `ci/bundle-check.mjs` | Fetches each submission's ref, records its exact commit, then runs `rig bundle check <folder> --json` | A separate CI job on every pull request and push to main |
+| `ci/bundle-check.mjs` | Validates submissions with `rig bundle check <folder> --json` and compares installed rig names with the pinned listed entries | A separate CI job on every pull request and push to main |
 | `status.mjs` | Generates `status/status.json` from run records, or checks that the committed file equals regenerated output | Wherever the run records and their receipts are kept |
 
 ```sh
@@ -24,6 +24,12 @@ temporary source checkouts. It never installs submitted dependencies, invokes bu
 daemon or team. The job has a read-only token and checkout does not persist credentials. Source fetches and validator
 processes each have a two-minute timeout; the job is capped at ten minutes. Every submission is checked on each run,
 including unchanged submissions; branch and tag results are bound to the resolved commit shown in that run.
+The job also reads `rig.yaml` at every listed entry's pinned commit. If different listing slugs share an installed
+rig `name`, it reports a notice naming both files and explaining that installing both can cause a name clash.
+This applies to submissions and complete entries; updates to the same listing and withdrawn entries are excluded.
+A clash alone does not fail the job: the maintainer reviews it and can accept an intentional variant. The notice
+asks a new submitter to choose another name or discuss the variant; an established listing gets information only.
+This does not change installation or runtime behaviour.
 The check has time limits but no repository-size cap: a repository too large for the runner fails at its limits,
 rather than with a named size error.
 
