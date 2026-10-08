@@ -24,11 +24,12 @@ temporary source checkouts. It never installs submitted dependencies, invokes bu
 daemon or team. The job has a read-only token and checkout does not persist credentials. Source fetches and validator
 processes each have a two-minute timeout; the job is capped at ten minutes. Every submission is checked on each run,
 including unchanged submissions; branch and tag results are bound to the resolved commit shown in that run.
-The job also reads `rig.yaml` at every listed entry's pinned commit. Two different listing slugs cannot use the
-same installed rig `name`, even if their display titles differ. This applies to both submissions and complete
-entries; updating the same listing is allowed, and withdrawn entries do not reserve names. A conflict names the
-other entry or submission so the contributor can change `rig.yaml` before listing. This is a catalog check;
-it does not change installation or runtime behaviour.
+The job also reads `rig.yaml` at every listed entry's pinned commit. If different listing slugs share an installed
+rig `name`, it reports a notice naming both files and explaining that installing both can cause a name clash.
+This applies to submissions and complete entries; updates to the same listing and withdrawn entries are excluded.
+A clash alone does not fail the job: the maintainer reviews it and can accept an intentional variant. The notice
+asks a new submitter to choose another name or discuss the variant; an established listing gets information only.
+This does not change installation or runtime behaviour.
 The check has time limits but no repository-size cap: a repository too large for the runner fails at its limits,
 rather than with a named size error.
 

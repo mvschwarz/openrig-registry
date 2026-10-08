@@ -86,28 +86,32 @@ export function checkSubmissions(root = ROOT) {
     if (!result.rigName) continue;
     const conflicts = results.filter(other => other.rigName === result.rigName && other.listing !== result.listing);
     if (!conflicts.length) continue;
-    result.status = 1;
-    result.error = `Installed rig name ${JSON.stringify(result.rigName)} is also used by ${conflicts.map(other => other.file).join(", ")}. Choose a different name in rig.yaml.`;
+    result.notice = `Installed rig name ${JSON.stringify(result.rigName)} is shared by ${result.file} and ${conflicts.map(other => other.file).join(", ")}. Installing both listings on one machine can cause a rig-name clash.`;
+    if (submissions.includes(result)) {
+      result.notice += " For this submission, choose a different name in rig.yaml or ask the maintainer to review an intentional variant.";
+    }
   }
   return results;
 }
 
 // Neither annotation data nor a JSON code block may become workflow commands or Markdown supplied by a bundle.
 const escapeAnnotation = text => String(text).replaceAll("%", "%25").replaceAll("\r", "%0D").replaceAll("\n", "%0A").replaceAll(":", "%3A").replaceAll(",", "%2C");
+const summaryJson = value => JSON.stringify(value, null, 2).replaceAll("`", "\\u0060").replaceAll("<", "\\u003c");
 export function report(results, { log = console.log, summary = process.env.GITHUB_STEP_SUMMARY, actions = process.env.GITHUB_ACTIONS === "true" } = {}) {
   for (const result of results) {
     log(JSON.stringify(result));
     if (actions) {
       const checks = result.result?.checks || [];
       const counts = `${checks.filter(c => c.status === "finding").length} finding(s), ${checks.filter(c => c.status === "not_checked").length} not checked`;
-      const message = result.error || `${counts}; resolved commit ${result.resolvedCommit}. See the job summary for every rule.`;
+      const message = result.error || result.notice || `${counts}; resolved commit ${result.resolvedCommit}. See the job summary for every rule.`;
       log(`::${result.status ? "error" : "notice"} file=${escapeAnnotation(result.file)},title=Bundle check::${escapeAnnotation(message)}`);
     }
   }
   if (!results.length) log("No submissions or listed entries to check.");
   if (summary) {
-    const json = JSON.stringify(results, null, 2).replaceAll("`", "\\u0060").replaceAll("<", "\\u003c");
-    fs.appendFileSync(summary, `## Bundle and installed-name checks\n\nSubmission validator: @openrig/cli 0.6.6. Listed entries are fetched at their pins to compare installed rig names. No bundle is installed or launched.\n\n${results.length ? "```json\n" + json + "\n```" : "No submissions or listed entries to check."}\n`);
+    const notices = results.filter(result => result.notice).map(({ file, notice }) => ({ file, notice }));
+    const advisory = notices.length ? `### Maintainer review: installed-name clashes\n\nThese notices do not fail the job; the maintainer decides whether to list an intentional variant.\n\n\`\`\`json\n${summaryJson(notices)}\n\`\`\`\n\n` : "";
+    fs.appendFileSync(summary, `## Bundle and installed-name checks\n\nSubmission validator: @openrig/cli 0.6.6. Listed entries are fetched at their pins to compare installed rig names. No bundle is installed or launched.\n\n${advisory}${results.length ? "```json\n" + summaryJson(results) + "\n```" : "No submissions or listed entries to check."}\n`);
   }
   return results.some(result => result.status !== 0) ? 1 : 0;
 }

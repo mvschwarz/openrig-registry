@@ -43,10 +43,11 @@ npm test
 npm run check
 ```
 
-CI runs these checks on pull requests and pushes to main. A separate **Submitted bundle check** job fetches each
-submission's source and runs the pinned OpenRig validator. Its PR annotation and job summary show the exact commit
-and results. Submitted bundles are not installed or launched. Status is generated from run records; it is not edited
-by hand.
+CI runs these checks on pull requests and pushes to main. A separate **Bundle and installed-name check** job fetches
+each submission's source and runs the pinned OpenRig validator. It also compares installed names with the pinned
+listed entries and reports clashes to the maintainer without failing the job. Its PR annotation and job summary show
+the exact commit and results. Submitted bundles are not installed or launched. Status is generated from run records;
+it is not edited by hand.
 
 ## License
 

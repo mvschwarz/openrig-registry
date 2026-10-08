@@ -9,14 +9,17 @@ folder: rigs/my-team   # the folder holding rig.yaml; "." for the repository roo
 ref: main              # a branch, tag or commit
 ```
 
-The registry check accepts it and says "Submission received". The **Submitted bundle check** job then fetches that
+The registry check accepts it and says "Submission received". The **Bundle and installed-name check** job then fetches that
 ref and runs `rig bundle check` using OpenRig 0.6.6. Its PR annotation and job summary show the resolved commit,
-findings and checks left unverified. Findings or an unreadable source fail the check. The job does not install
+findings and checks left unverified. Bundle-validation findings or an unreadable source fail the check. The job does not install
 dependencies from the bundle, run its scripts, or launch its team. To check before submitting, run
 `rig bundle check <folder>` locally.
+
+The installed `name` in `rig.yaml` should differ from every listed team's; the check reports a clash to the maintainer
+as a notice without failing the job.
 
 A maintainer then pins your link to an exact commit, reviews the bundle, writes the full entry in `registry/`, and
 removes this file. If it isn't listed, you get a short reply saying why.
 
-Rig names on openrig.dev/rigs are unique. If `registry/<your-team>.yaml` already exists, the check still passes but
+Listing slugs on openrig.dev/rigs are unique. If `registry/<your-team>.yaml` already exists, the check still passes but
 says the name is taken; rename your file to a distinct one, for example `<taken-name>-<your-name>.yaml`.
