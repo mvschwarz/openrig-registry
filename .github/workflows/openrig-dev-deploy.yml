@@ -1,0 +1,26 @@
+# Rebuilds openrig.dev after a change on main passes the registry check, so /rigs shows a merged listing within
+# minutes. The site's own build fetches and validates this registry; this workflow only asks Vercel to build again
+# and reads nothing from this repository. openrig.dev keeps its daily scheduled rebuild as a backup.
+# Needs one repository secret, OPENRIG_DEV_DEPLOY_HOOK_URL: the openrig.dev production deploy link.
+name: openrig.dev deploy
+
+on:
+  workflow_run:
+    workflows: ["Registry check"]
+    types: [completed]
+    branches: [main]
+
+permissions: {}
+
+jobs:
+  deploy:
+    if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Ask Vercel to rebuild openrig.dev
+        env:
+          HOOK: ${{ secrets.OPENRIG_DEV_DEPLOY_HOOK_URL }}
+        run: |
+          if [ -z "$HOOK" ]; then echo "OPENRIG_DEV_DEPLOY_HOOK_URL is not set; nothing deployed." >&2; exit 1; fi
+          curl -fsS -X POST "$HOOK" -o /dev/null -w 'deploy hook: HTTP %{http_code}\n'
