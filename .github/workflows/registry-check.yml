@@ -1,5 +1,5 @@
 # Checks registry entries, behaviour views, journeys and the generated status file. It parses files in this
-# repository only. The separate bundle job fetches submitted source for validation, never installs or launches it.
+# repository only. The bundle job fetches submissions for validation and listed pins for installed-name checks.
 name: Registry check
 
 on:
@@ -29,7 +29,7 @@ jobs:
       - run: node registry-check.mjs
 
   bundles:
-    name: Submitted bundle check
+    name: Bundle and installed-name check
     needs: check
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -50,7 +50,7 @@ jobs:
         run: node --test ci/bundle-check.test.mjs
         env:
           RIG_BIN: ${{ runner.temp }}/bundle-validator/node_modules/.bin/rig
-      - name: Check submitted bundles
+      - name: Check submissions and listed rig names
         run: node ci/bundle-check.mjs
         env:
           RIG_BIN: ${{ runner.temp }}/bundle-validator/node_modules/.bin/rig
