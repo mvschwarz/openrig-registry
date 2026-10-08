@@ -1,0 +1,28 @@
+schema: openrig.registry-entry/v1
+slug: workshop-review-pair
+name: Workshop with a review pair
+summary: Optional five-seat Workshop variant with two independent reviewers,
+  one Claude Code and one Codex. The four-seat Workshop remains the recommended
+  default. Both install as workshop in the same directory; choose one variant.
+source:
+  repository: https://github.com/mvschwarz/openrig-world
+  folder: rigs/workshop-review-pair
+  resolvedCommit: ec063e3d11249a7e7b74d210f93d08d8c490b600
+  requestedRef: ec063e3d11249a7e7b74d210f93d08d8c490b600
+  canonicalUrl: https://github.com/mvschwarz/openrig-world/tree/ec063e3d11249a7e7b74d210f93d08d8c490b600/rigs/workshop-review-pair
+configurations:
+  - id: dev.build=claude-code,dev.qa=claude-code,orch.lead=codex,review.r1=claude-code,review.r2=codex
+    alias: recommended
+    recommended: true
+    packageDigest:
+      algorithm: sha256
+      value: 60e9e59ba5292b692d4b8a96f69f3ff7d0d0f3f66cf1207392e445cc39408bbd
+      coverage: openrig.package-digest/v1
+    assembler:
+      openrigVersion: 0.6.7
+    behaviour: views/workshop-review-pair/dev.build-claude-code_dev.qa-claude-code_orch.lead-codex_review.r1-claude-code_review.r2-codex.0.6.7.json
+review:
+  date: 2026-10-08
+  note: Reviewed for listing. Bundle generation and inspection are not native
+    runtime proof or a security audit.
+status: listed
