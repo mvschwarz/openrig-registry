@@ -1,5 +1,5 @@
 {
-  "bodyDigest": "e16dc8df0175c905187ae8cfd00f6dfb76641b939c2a91ee02a3f5a232325b8e",
+  "bodyDigest": "af3cfb8cdec0159b954dbe377501bd56d935e285291c11253fe23e8930854787",
   "generated": {
     "by": "openrig-world tools/status.mjs",
     "generatorVersion": 1,
@@ -7,7 +7,32 @@
     "rule": "openrig.status-rule/v1"
   },
   "harnessChecks": {
-    "harnesses": {},
+    "harnesses": {
+      "claude-code": {
+        "darwin-arm64": {
+          "date": "2026-10-06",
+          "harnessVersion": "2.1.290",
+          "note": "Installed, driven and answered during a native macOS workshop run. This dated harness check does not label the current team configuration.",
+          "openrigVersion": "0.6.6",
+          "recordIds": [
+            "w7-pni-proj-claude-code-harness-20261006"
+          ],
+          "result": "PASS"
+        }
+      },
+      "codex": {
+        "darwin-arm64": {
+          "date": "2026-10-06",
+          "harnessVersion": "0.160.0",
+          "note": "Installed, driven and answered during a native macOS workshop run. This dated harness check does not label the current team configuration.",
+          "openrigVersion": "0.6.6",
+          "recordIds": [
+            "w7-pni-proj-codex-harness-20261006"
+          ],
+          "result": "PASS"
+        }
+      }
+    },
     "state": "ok"
   },
   "listings": {
