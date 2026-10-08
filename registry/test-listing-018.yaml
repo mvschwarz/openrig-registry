@@ -23,4 +23,5 @@ review:
   note: Temporary listing for scheduled discovery verification. Reuses the
     Workshop package reviewed on 2026-10-06. Listing review is not native
     runtime proof or a security audit.
-status: listed
+status: withdrawn
+withdrawnOn: 2026-10-08
