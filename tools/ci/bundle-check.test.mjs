@@ -5,6 +5,7 @@ import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { test } from "node:test";
 import { checkSubmission, checkSubmissions, report } from "./bundle-check.mjs";
+import { readYaml } from "../lib/load.mjs";
 
 const SPEC = `version: "0.2"
 name: validator-fixture
@@ -48,8 +49,50 @@ function fixture(t) {
   fs.mkdirSync(path.join(registry, "registry", "submissions"), { recursive: true });
   const submission = { repository: "https://github.com/example/team", folder: ".", ref: "main" };
   const writeSubmission = (value = submission) => fs.writeFileSync(path.join(registry, "registry/submissions/team.yaml"), JSON.stringify(value));
-  return { root, source, git, commit, marker, registry, submission, writeSubmission };
+  const writeEntry = (slug, { ref = commit, status = "listed" } = {}) => {
+    const entry = readYaml(new URL("../test/fixtures/registry-valid.yaml", import.meta.url));
+    Object.assign(entry, { slug, name: "A display title", status });
+    entry.source = { repository: submission.repository, folder: ".", resolvedCommit: ref };
+    if (status === "withdrawn") entry.withdrawnOn = "2026-10-08";
+    fs.writeFileSync(path.join(registry, "registry", `${slug}.yaml`), JSON.stringify(entry));
+  };
+  return { root, source, git, commit, marker, registry, submission, writeSubmission, writeEntry };
 }
+
+test("a different listing slug cannot submit the same installed rig name", t => {
+  const f = fixture(t); f.writeEntry("existing"); f.writeSubmission();
+  const results = checkSubmissions(f.registry);
+  const submitted = results.find(r => r.file === "registry/submissions/team.yaml");
+  assert.equal(submitted.status, 1, JSON.stringify(results));
+  assert.match(submitted.error, /validator-fixture.*registry\/existing.yaml/);
+  assert.equal(fs.existsSync(f.marker), false);
+});
+
+test("two complete entries also cannot list the same installed rig name", t => {
+  const f = fixture(t); f.writeEntry("first"); f.writeEntry("second");
+  const results = checkSubmissions(f.registry);
+  assert.equal(results.length, 2);
+  assert.ok(results.every(r => r.status === 1 && /validator-fixture/.test(r.error)), JSON.stringify(results));
+  assert.equal(fs.existsSync(f.marker), false);
+});
+
+test("names come from the pinned rig, not a display title or moving branch", t => {
+  const f = fixture(t); f.writeEntry("first");
+  fs.writeFileSync(path.join(f.source, "rig.yaml"), SPEC.replace("name: validator-fixture", "name: other-team"));
+  f.git("add", "."); f.git("commit", "-qm", "Another installed name");
+  f.writeEntry("second", { ref: f.git("rev-parse", "HEAD") });
+  const results = checkSubmissions(f.registry);
+  assert.deepEqual(results.map(r => r.rigName), ["validator-fixture", "other-team"]);
+  assert.ok(results.every(r => r.status === 0), JSON.stringify(results));
+});
+
+test("an update of the same listing and a withdrawn name do not collide", t => {
+  const f = fixture(t); f.writeEntry("team"); f.writeEntry("retired", { status: "withdrawn" }); f.writeSubmission();
+  const results = checkSubmissions(f.registry);
+  assert.equal(results.length, 2);
+  assert.ok(results.every(r => r.status === 0), JSON.stringify(results));
+  assert.ok(results.every(r => r.rigName === "validator-fixture"));
+});
 
 test("a submitted branch reaches the real CLI, preserves not_checked, and executes no source scripts", t => {
   const f = fixture(t); f.writeSubmission();
