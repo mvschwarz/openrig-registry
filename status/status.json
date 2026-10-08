@@ -1,5 +1,5 @@
 {
-  "bodyDigest": "af3cfb8cdec0159b954dbe377501bd56d935e285291c11253fe23e8930854787",
+  "bodyDigest": "e1934a4f962c10760988b2a8007ec0de5e501718db470b7148f3edf1ec5a46c0",
   "generated": {
     "by": "openrig-world tools/status.mjs",
     "generatorVersion": 1,
@@ -69,6 +69,15 @@
           "platforms": {}
         },
         "dev.build=pi,dev.qa=pi,dev.review=pi,orch.lead=pi": {
+          "communityReports": 0,
+          "platforms": {}
+        }
+      },
+      "state": "ok"
+    },
+    "workshop-review-pair": {
+      "configurations": {
+        "dev.build=claude-code,dev.qa=claude-code,orch.lead=codex,review.r1=claude-code,review.r2=codex": {
           "communityReports": 0,
           "platforms": {}
         }
