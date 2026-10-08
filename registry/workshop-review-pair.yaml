@@ -1,9 +1,9 @@
 schema: openrig.registry-entry/v1
 slug: workshop-review-pair
 name: Workshop with a review pair
-summary: A five-seat Workshop variant with a lead, builder, QA and two
-  independent reviewers, one Claude Code and one Codex. Installs as workshop in
-  the same directory as the four-seat Workshop; choose one variant.
+summary: Optional five-seat Workshop variant with two independent reviewers,
+  one Claude Code and one Codex. The four-seat Workshop remains the recommended
+  default. Both install as workshop in the same directory; choose one variant.
 source:
   repository: https://github.com/mvschwarz/openrig-world
   folder: rigs/workshop-review-pair
