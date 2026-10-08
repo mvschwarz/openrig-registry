@@ -5,14 +5,14 @@
     "source": {
       "repository": "https://github.com/mvschwarz/openrig-world",
       "folder": "rigs/workshop",
-      "requestedRef": "52ca6128486219676dbe749f360e1d3539e6ab20",
-      "resolvedCommit": "52ca6128486219676dbe749f360e1d3539e6ab20",
-      "canonicalUrl": "https://github.com/mvschwarz/openrig-world/tree/52ca6128486219676dbe749f360e1d3539e6ab20/rigs/workshop"
+      "requestedRef": "9ace64b44fb783e0a12f1916aebb35452722e452",
+      "resolvedCommit": "9ace64b44fb783e0a12f1916aebb35452722e452",
+      "canonicalUrl": "https://github.com/mvschwarz/openrig-world/tree/9ace64b44fb783e0a12f1916aebb35452722e452/rigs/workshop"
     },
     "configurationId": "dev.build=pi,dev.qa=pi,dev.review=pi,orch.lead=pi",
     "packageDigest": {
       "algorithm": "sha256",
-      "value": "ea373805e34544a2495f985a6320b1c1ccad129299ddfe99c18fd3f81a25a029",
+      "value": "ac8c0e51eed6479d687b350433ec6aab3270cdbd144f2c1a795ae21f8404de3e",
       "coverage": "openrig.package-digest/v1"
     },
     "assembler": {
@@ -29,11 +29,11 @@
       "source": {
         "repository": "https://github.com/mvschwarz/openrig-world",
         "folder": "rigs/workshop",
-        "requestedRef": "52ca6128486219676dbe749f360e1d3539e6ab20",
-        "resolvedCommit": "52ca6128486219676dbe749f360e1d3539e6ab20",
-        "canonicalUrl": "https://github.com/mvschwarz/openrig-world/tree/52ca6128486219676dbe749f360e1d3539e6ab20/rigs/workshop"
+        "requestedRef": "9ace64b44fb783e0a12f1916aebb35452722e452",
+        "resolvedCommit": "9ace64b44fb783e0a12f1916aebb35452722e452",
+        "canonicalUrl": "https://github.com/mvschwarz/openrig-world/tree/9ace64b44fb783e0a12f1916aebb35452722e452/rigs/workshop"
       },
-      "created_at": "2026-10-07T23:51:39.207Z",
+      "created_at": "2026-10-08T09:01:55.985Z",
       "daemon_version": "0.6.6"
     },
     "integrity": {
@@ -1410,6 +1410,9 @@
         },
         {
           "path": "agents/workshop/pi-skills.lock.json"
+        },
+        {
+          "path": "agents/workshop/skills/openrig-user/SKILL.md"
         },
         {
           "path": "bundle.yaml"
