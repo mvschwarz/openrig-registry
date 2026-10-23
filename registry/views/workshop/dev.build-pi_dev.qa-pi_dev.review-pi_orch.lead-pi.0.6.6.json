@@ -5,14 +5,14 @@
     "source": {
       "repository": "https://github.com/mvschwarz/openrig-world",
       "folder": "rigs/workshop",
-      "requestedRef": "fa38c9b55e013e600a3472d2f7561df32df79ce8",
-      "resolvedCommit": "fa38c9b55e013e600a3472d2f7561df32df79ce8",
-      "canonicalUrl": "https://github.com/mvschwarz/openrig-world/tree/fa38c9b55e013e600a3472d2f7561df32df79ce8/rigs/workshop"
+      "requestedRef": "d139a0c83814b9a67fa53d7c2419c5896cbe06b3",
+      "resolvedCommit": "d139a0c83814b9a67fa53d7c2419c5896cbe06b3",
+      "canonicalUrl": "https://github.com/mvschwarz/openrig-world/tree/d139a0c83814b9a67fa53d7c2419c5896cbe06b3/rigs/workshop"
     },
     "configurationId": "dev.build=pi,dev.qa=pi,dev.review=pi,orch.lead=pi",
     "packageDigest": {
       "algorithm": "sha256",
-      "value": "446d1702a0e5cb5d92b0d65a2c05a178ab1502e1174a2d383a13079438230706",
+      "value": "b07331880f9bc5d1a351ca52ab728cd3f46efae8952da3a94d5467c5a1fd6afd",
       "coverage": "openrig.package-digest/v1"
     },
     "assembler": {
@@ -29,12 +29,14 @@
       "source": {
         "repository": "https://github.com/mvschwarz/openrig-world",
         "folder": "rigs/workshop",
-        "requestedRef": "fa38c9b55e013e600a3472d2f7561df32df79ce8",
-        "resolvedCommit": "fa38c9b55e013e600a3472d2f7561df32df79ce8",
-        "canonicalUrl": "https://github.com/mvschwarz/openrig-world/tree/fa38c9b55e013e600a3472d2f7561df32df79ce8/rigs/workshop"
+        "requestedRef": "d139a0c83814b9a67fa53d7c2419c5896cbe06b3",
+        "resolvedCommit": "d139a0c83814b9a67fa53d7c2419c5896cbe06b3",
+        "canonicalUrl": "https://github.com/mvschwarz/openrig-world/tree/d139a0c83814b9a67fa53d7c2419c5896cbe06b3/rigs/workshop"
       },
-      "created_at": "2026-10-18T05:51:22.569Z",
-      "daemon_version": "0.6.6"
+      "created_at": "2026-10-23T15:06:05.314Z",
+      "source_host": "8d08273591ca",
+      "daemon_version": "0.6.6",
+      "cli_version": "0.6.6"
     },
     "integrity": {
       "digestValid": true,
@@ -1410,9 +1412,6 @@
         },
         {
           "path": "agents/workshop/pi-skills.lock.json"
-        },
-        {
-          "path": "agents/workshop/skills/openrig-user/SKILL.md"
         },
         {
           "path": "bundle.yaml"
