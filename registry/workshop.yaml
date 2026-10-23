@@ -7,15 +7,15 @@ summary: "One four-seat software team: a Codex lead and reviewer, Claude Code
 source:
   repository: https://github.com/mvschwarz/openrig-world
   folder: rigs/workshop
-  resolvedCommit: fa38c9b55e013e600a3472d2f7561df32df79ce8
-  requestedRef: fa38c9b55e013e600a3472d2f7561df32df79ce8
+  resolvedCommit: d139a0c83814b9a67fa53d7c2419c5896cbe06b3
+  requestedRef: d139a0c83814b9a67fa53d7c2419c5896cbe06b3
 configurations:
   - id: dev.build=claude-code,dev.qa=claude-code,dev.review=codex,orch.lead=codex
     alias: recommended
     recommended: true
     packageDigest:
       algorithm: sha256
-      value: 88dbcd998d9464c745d1919c69e0608c79fde4fcc2dc4b23710d612b8f9db746
+      value: 737557d4a93cf72154f3d757b4f2ca10b8886c6886d080fbf61265980b8f3754
       coverage: openrig.package-digest/v1
     assembler:
       openrigVersion: 0.6.6
@@ -24,7 +24,7 @@ configurations:
     alias: all-claude
     packageDigest:
       algorithm: sha256
-      value: e93506f363b94638098ae2508bc17b71961b08e971eb6fe02f5e72a82eb9a3c3
+      value: 7fbf53259e383e35b88eff23ff688cd282cdbecaa95ecbd56432ff34253ce031
       coverage: openrig.package-digest/v1
     assembler:
       openrigVersion: 0.6.6
@@ -33,7 +33,7 @@ configurations:
     alias: all-codex
     packageDigest:
       algorithm: sha256
-      value: 8c048df0526ce7e2240679dc97e3b32a6ed91e34fbe4da216245850ed601d458
+      value: 8c3ccdcf0ab5acf2dab83cd9da528ceb70ff358e2a03b4a8fd70327618024646
       coverage: openrig.package-digest/v1
     assembler:
       openrigVersion: 0.6.6
@@ -42,12 +42,15 @@ configurations:
     alias: all-pi
     packageDigest:
       algorithm: sha256
-      value: 446d1702a0e5cb5d92b0d65a2c05a178ab1502e1174a2d383a13079438230706
+      value: b07331880f9bc5d1a351ca52ab728cd3f46efae8952da3a94d5467c5a1fd6afd
       coverage: openrig.package-digest/v1
     assembler:
       openrigVersion: 0.6.6
     behaviour: views/workshop/dev.build-pi_dev.qa-pi_dev.review-pi_orch.lead-pi.0.6.6.json
 review:
   date: 2026-10-18
-  note: "Reviewed for listing. Validation is not native runtime proof or a security audit. Native Linux evidence dated 2026-10-18 and macOS evidence dated 2026-10-06 are historical, not runs of this pin. New-pin team coverage and Pi remain unverified."
+  note: "Reviewed for listing. Validation is not native runtime proof or a
+    security audit. Native Linux evidence dated 2026-10-18 and macOS evidence
+    dated 2026-10-06 are historical, not runs of this pin. New-pin team coverage
+    and Pi remain unverified."
 status: listed

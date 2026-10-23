@@ -5,14 +5,14 @@
     "source": {
       "repository": "https://github.com/mvschwarz/openrig-world",
       "folder": "rigs/workshop",
-      "requestedRef": "fa38c9b55e013e600a3472d2f7561df32df79ce8",
-      "resolvedCommit": "fa38c9b55e013e600a3472d2f7561df32df79ce8",
-      "canonicalUrl": "https://github.com/mvschwarz/openrig-world/tree/fa38c9b55e013e600a3472d2f7561df32df79ce8/rigs/workshop"
+      "requestedRef": "d139a0c83814b9a67fa53d7c2419c5896cbe06b3",
+      "resolvedCommit": "d139a0c83814b9a67fa53d7c2419c5896cbe06b3",
+      "canonicalUrl": "https://github.com/mvschwarz/openrig-world/tree/d139a0c83814b9a67fa53d7c2419c5896cbe06b3/rigs/workshop"
     },
     "configurationId": "dev.build=claude-code,dev.qa=claude-code,dev.review=claude-code,orch.lead=claude-code",
     "packageDigest": {
       "algorithm": "sha256",
-      "value": "e93506f363b94638098ae2508bc17b71961b08e971eb6fe02f5e72a82eb9a3c3",
+      "value": "7fbf53259e383e35b88eff23ff688cd282cdbecaa95ecbd56432ff34253ce031",
       "coverage": "openrig.package-digest/v1"
     },
     "assembler": {
@@ -29,12 +29,14 @@
       "source": {
         "repository": "https://github.com/mvschwarz/openrig-world",
         "folder": "rigs/workshop",
-        "requestedRef": "fa38c9b55e013e600a3472d2f7561df32df79ce8",
-        "resolvedCommit": "fa38c9b55e013e600a3472d2f7561df32df79ce8",
-        "canonicalUrl": "https://github.com/mvschwarz/openrig-world/tree/fa38c9b55e013e600a3472d2f7561df32df79ce8/rigs/workshop"
+        "requestedRef": "d139a0c83814b9a67fa53d7c2419c5896cbe06b3",
+        "resolvedCommit": "d139a0c83814b9a67fa53d7c2419c5896cbe06b3",
+        "canonicalUrl": "https://github.com/mvschwarz/openrig-world/tree/d139a0c83814b9a67fa53d7c2419c5896cbe06b3/rigs/workshop"
       },
-      "created_at": "2026-10-18T05:51:21.728Z",
-      "daemon_version": "0.6.6"
+      "created_at": "2026-10-23T15:05:59.635Z",
+      "source_host": "8d08273591ca",
+      "daemon_version": "0.6.6",
+      "cli_version": "0.6.6"
     },
     "integrity": {
       "digestValid": true,
@@ -162,216 +164,12 @@
     {
       "seat": "orch.lead",
       "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/agent-operated-software",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.agent-operated-software"
-        }
-      ]
-    },
-    {
-      "seat": "orch.lead",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/agent-operated-workflows",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.agent-operated-workflows"
-        }
-      ]
-    },
-    {
-      "seat": "orch.lead",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/applying-a-permission-policy",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.applying-a-permission-policy"
-        }
-      ]
-    },
-    {
-      "seat": "orch.lead",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/claude-compaction-restore",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.claude-compaction-restore"
-        }
-      ]
-    },
-    {
-      "seat": "orch.lead",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/delegating-work",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.delegating-work"
-        }
-      ]
-    },
-    {
-      "seat": "orch.lead",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/forming-an-openrig-mental-model",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.forming-an-openrig-mental-model"
-        }
-      ]
-    },
-    {
-      "seat": "orch.lead",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/loading-addressable-markdown",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.loading-addressable-markdown"
-        }
-      ]
-    },
-    {
-      "seat": "orch.lead",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/messaging-the-human",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.messaging-the-human"
-        }
-      ]
-    },
-    {
-      "seat": "orch.lead",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/mission-slice-sop",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.mission-slice-sop"
-        }
-      ]
-    },
-    {
-      "seat": "orch.lead",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/openrig-operating-model",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.openrig-operating-model"
-        }
-      ]
-    },
-    {
-      "seat": "orch.lead",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/openrig-user",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.openrig-user"
-        }
-      ]
-    },
-    {
-      "seat": "orch.lead",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/orienting-to-an-inherited-seat",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.orienting-to-an-inherited-seat"
-        }
-      ]
-    },
-    {
-      "seat": "orch.lead",
-      "kind": "skills",
       "pathOrRef": "agents/workshop/bundle-skills/ponytail",
       "resolution": "archive",
       "sourceRefs": [
         {
           "path": "agents/workshop/agent.yaml",
           "field": "resources.skills.ponytail"
-        }
-      ]
-    },
-    {
-      "seat": "orch.lead",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/queue-handoff",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.queue-handoff"
-        }
-      ]
-    },
-    {
-      "seat": "orch.lead",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/refocusing",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.refocusing"
-        }
-      ]
-    },
-    {
-      "seat": "orch.lead",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/retiring-and-inheriting-a-seat",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.retiring-and-inheriting-a-seat"
-        }
-      ]
-    },
-    {
-      "seat": "orch.lead",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/seat-continuity-and-handover",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.seat-continuity-and-handover"
-        }
-      ]
-    },
-    {
-      "seat": "orch.lead",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/session-compaction-and-restore",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.session-compaction-and-restore"
         }
       ]
     },
@@ -442,216 +240,12 @@
     {
       "seat": "dev.build",
       "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/agent-operated-software",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.agent-operated-software"
-        }
-      ]
-    },
-    {
-      "seat": "dev.build",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/agent-operated-workflows",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.agent-operated-workflows"
-        }
-      ]
-    },
-    {
-      "seat": "dev.build",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/applying-a-permission-policy",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.applying-a-permission-policy"
-        }
-      ]
-    },
-    {
-      "seat": "dev.build",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/claude-compaction-restore",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.claude-compaction-restore"
-        }
-      ]
-    },
-    {
-      "seat": "dev.build",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/delegating-work",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.delegating-work"
-        }
-      ]
-    },
-    {
-      "seat": "dev.build",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/forming-an-openrig-mental-model",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.forming-an-openrig-mental-model"
-        }
-      ]
-    },
-    {
-      "seat": "dev.build",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/loading-addressable-markdown",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.loading-addressable-markdown"
-        }
-      ]
-    },
-    {
-      "seat": "dev.build",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/messaging-the-human",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.messaging-the-human"
-        }
-      ]
-    },
-    {
-      "seat": "dev.build",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/mission-slice-sop",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.mission-slice-sop"
-        }
-      ]
-    },
-    {
-      "seat": "dev.build",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/openrig-operating-model",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.openrig-operating-model"
-        }
-      ]
-    },
-    {
-      "seat": "dev.build",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/openrig-user",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.openrig-user"
-        }
-      ]
-    },
-    {
-      "seat": "dev.build",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/orienting-to-an-inherited-seat",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.orienting-to-an-inherited-seat"
-        }
-      ]
-    },
-    {
-      "seat": "dev.build",
-      "kind": "skills",
       "pathOrRef": "agents/workshop/bundle-skills/ponytail",
       "resolution": "archive",
       "sourceRefs": [
         {
           "path": "agents/workshop/agent.yaml",
           "field": "resources.skills.ponytail"
-        }
-      ]
-    },
-    {
-      "seat": "dev.build",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/queue-handoff",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.queue-handoff"
-        }
-      ]
-    },
-    {
-      "seat": "dev.build",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/refocusing",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.refocusing"
-        }
-      ]
-    },
-    {
-      "seat": "dev.build",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/retiring-and-inheriting-a-seat",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.retiring-and-inheriting-a-seat"
-        }
-      ]
-    },
-    {
-      "seat": "dev.build",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/seat-continuity-and-handover",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.seat-continuity-and-handover"
-        }
-      ]
-    },
-    {
-      "seat": "dev.build",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/session-compaction-and-restore",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.session-compaction-and-restore"
         }
       ]
     },
@@ -709,216 +303,12 @@
     {
       "seat": "dev.review",
       "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/agent-operated-software",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.agent-operated-software"
-        }
-      ]
-    },
-    {
-      "seat": "dev.review",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/agent-operated-workflows",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.agent-operated-workflows"
-        }
-      ]
-    },
-    {
-      "seat": "dev.review",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/applying-a-permission-policy",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.applying-a-permission-policy"
-        }
-      ]
-    },
-    {
-      "seat": "dev.review",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/claude-compaction-restore",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.claude-compaction-restore"
-        }
-      ]
-    },
-    {
-      "seat": "dev.review",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/delegating-work",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.delegating-work"
-        }
-      ]
-    },
-    {
-      "seat": "dev.review",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/forming-an-openrig-mental-model",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.forming-an-openrig-mental-model"
-        }
-      ]
-    },
-    {
-      "seat": "dev.review",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/loading-addressable-markdown",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.loading-addressable-markdown"
-        }
-      ]
-    },
-    {
-      "seat": "dev.review",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/messaging-the-human",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.messaging-the-human"
-        }
-      ]
-    },
-    {
-      "seat": "dev.review",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/mission-slice-sop",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.mission-slice-sop"
-        }
-      ]
-    },
-    {
-      "seat": "dev.review",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/openrig-operating-model",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.openrig-operating-model"
-        }
-      ]
-    },
-    {
-      "seat": "dev.review",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/openrig-user",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.openrig-user"
-        }
-      ]
-    },
-    {
-      "seat": "dev.review",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/orienting-to-an-inherited-seat",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.orienting-to-an-inherited-seat"
-        }
-      ]
-    },
-    {
-      "seat": "dev.review",
-      "kind": "skills",
       "pathOrRef": "agents/workshop/bundle-skills/ponytail",
       "resolution": "archive",
       "sourceRefs": [
         {
           "path": "agents/workshop/agent.yaml",
           "field": "resources.skills.ponytail"
-        }
-      ]
-    },
-    {
-      "seat": "dev.review",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/queue-handoff",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.queue-handoff"
-        }
-      ]
-    },
-    {
-      "seat": "dev.review",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/refocusing",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.refocusing"
-        }
-      ]
-    },
-    {
-      "seat": "dev.review",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/retiring-and-inheriting-a-seat",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.retiring-and-inheriting-a-seat"
-        }
-      ]
-    },
-    {
-      "seat": "dev.review",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/seat-continuity-and-handover",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.seat-continuity-and-handover"
-        }
-      ]
-    },
-    {
-      "seat": "dev.review",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/session-compaction-and-restore",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.session-compaction-and-restore"
         }
       ]
     },
@@ -976,216 +366,12 @@
     {
       "seat": "dev.qa",
       "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/agent-operated-software",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.agent-operated-software"
-        }
-      ]
-    },
-    {
-      "seat": "dev.qa",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/agent-operated-workflows",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.agent-operated-workflows"
-        }
-      ]
-    },
-    {
-      "seat": "dev.qa",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/applying-a-permission-policy",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.applying-a-permission-policy"
-        }
-      ]
-    },
-    {
-      "seat": "dev.qa",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/claude-compaction-restore",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.claude-compaction-restore"
-        }
-      ]
-    },
-    {
-      "seat": "dev.qa",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/delegating-work",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.delegating-work"
-        }
-      ]
-    },
-    {
-      "seat": "dev.qa",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/forming-an-openrig-mental-model",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.forming-an-openrig-mental-model"
-        }
-      ]
-    },
-    {
-      "seat": "dev.qa",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/loading-addressable-markdown",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.loading-addressable-markdown"
-        }
-      ]
-    },
-    {
-      "seat": "dev.qa",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/messaging-the-human",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.messaging-the-human"
-        }
-      ]
-    },
-    {
-      "seat": "dev.qa",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/mission-slice-sop",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.mission-slice-sop"
-        }
-      ]
-    },
-    {
-      "seat": "dev.qa",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/openrig-operating-model",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.openrig-operating-model"
-        }
-      ]
-    },
-    {
-      "seat": "dev.qa",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/openrig-user",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.openrig-user"
-        }
-      ]
-    },
-    {
-      "seat": "dev.qa",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/orienting-to-an-inherited-seat",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.orienting-to-an-inherited-seat"
-        }
-      ]
-    },
-    {
-      "seat": "dev.qa",
-      "kind": "skills",
       "pathOrRef": "agents/workshop/bundle-skills/ponytail",
       "resolution": "archive",
       "sourceRefs": [
         {
           "path": "agents/workshop/agent.yaml",
           "field": "resources.skills.ponytail"
-        }
-      ]
-    },
-    {
-      "seat": "dev.qa",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/queue-handoff",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.queue-handoff"
-        }
-      ]
-    },
-    {
-      "seat": "dev.qa",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/refocusing",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.refocusing"
-        }
-      ]
-    },
-    {
-      "seat": "dev.qa",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/retiring-and-inheriting-a-seat",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.retiring-and-inheriting-a-seat"
-        }
-      ]
-    },
-    {
-      "seat": "dev.qa",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/seat-continuity-and-handover",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.seat-continuity-and-handover"
-        }
-      ]
-    },
-    {
-      "seat": "dev.qa",
-      "kind": "skills",
-      "pathOrRef": "agents/workshop/skills/session-compaction-and-restore",
-      "resolution": "archive",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.session-compaction-and-restore"
         }
       ]
     },
@@ -1231,6 +417,19 @@
   "alsoRuns": [
     {
       "seat": "orch.lead",
+      "kind": "plugins",
+      "pathOrRef": "openrig-home:plugins/openrig-core",
+      "resolution": "host_at_launch",
+      "sourceRefs": [
+        {
+          "path": "agents/workshop/agent.yaml",
+          "field": "resources.plugins.openrig-core"
+        }
+      ],
+      "trigger": "if selected runtime supports and loads this resource"
+    },
+    {
+      "seat": "orch.lead",
       "kind": "runtimeResources",
       "pathOrRef": "agents/workshop/runtime/claude-activity-hooks.json",
       "resolution": "archive",
@@ -1257,6 +456,19 @@
     },
     {
       "seat": "dev.build",
+      "kind": "plugins",
+      "pathOrRef": "openrig-home:plugins/openrig-core",
+      "resolution": "host_at_launch",
+      "sourceRefs": [
+        {
+          "path": "agents/workshop/agent.yaml",
+          "field": "resources.plugins.openrig-core"
+        }
+      ],
+      "trigger": "if selected runtime supports and loads this resource"
+    },
+    {
+      "seat": "dev.build",
       "kind": "runtimeResources",
       "pathOrRef": "agents/workshop/runtime/claude-activity-hooks.json",
       "resolution": "archive",
@@ -1283,6 +495,19 @@
     },
     {
       "seat": "dev.review",
+      "kind": "plugins",
+      "pathOrRef": "openrig-home:plugins/openrig-core",
+      "resolution": "host_at_launch",
+      "sourceRefs": [
+        {
+          "path": "agents/workshop/agent.yaml",
+          "field": "resources.plugins.openrig-core"
+        }
+      ],
+      "trigger": "if selected runtime supports and loads this resource"
+    },
+    {
+      "seat": "dev.review",
       "kind": "runtimeResources",
       "pathOrRef": "agents/workshop/runtime/claude-activity-hooks.json",
       "resolution": "archive",
@@ -1306,6 +531,19 @@
           "field": "startup"
         }
       ]
+    },
+    {
+      "seat": "dev.qa",
+      "kind": "plugins",
+      "pathOrRef": "openrig-home:plugins/openrig-core",
+      "resolution": "host_at_launch",
+      "sourceRefs": [
+        {
+          "path": "agents/workshop/agent.yaml",
+          "field": "resources.plugins.openrig-core"
+        }
+      ],
+      "trigger": "if selected runtime supports and loads this resource"
     },
     {
       "seat": "dev.qa",
@@ -1354,186 +592,6 @@
       "seat": "orch.lead",
       "kind": "skills",
       "destinationBase": "seat_cwd",
-      "path": ".claude/skills/agent-operated-software",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.agent-operated-software"
-        }
-      ]
-    },
-    {
-      "seat": "orch.lead",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/agent-operated-workflows",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.agent-operated-workflows"
-        }
-      ]
-    },
-    {
-      "seat": "orch.lead",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/applying-a-permission-policy",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.applying-a-permission-policy"
-        }
-      ]
-    },
-    {
-      "seat": "orch.lead",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/claude-compaction-restore",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.claude-compaction-restore"
-        }
-      ]
-    },
-    {
-      "seat": "orch.lead",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/delegating-work",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.delegating-work"
-        }
-      ]
-    },
-    {
-      "seat": "orch.lead",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/forming-an-openrig-mental-model",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.forming-an-openrig-mental-model"
-        }
-      ]
-    },
-    {
-      "seat": "orch.lead",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/loading-addressable-markdown",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.loading-addressable-markdown"
-        }
-      ]
-    },
-    {
-      "seat": "orch.lead",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/messaging-the-human",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.messaging-the-human"
-        }
-      ]
-    },
-    {
-      "seat": "orch.lead",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/mission-slice-sop",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.mission-slice-sop"
-        }
-      ]
-    },
-    {
-      "seat": "orch.lead",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/openrig-operating-model",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.openrig-operating-model"
-        }
-      ]
-    },
-    {
-      "seat": "orch.lead",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/openrig-user",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.openrig-user"
-        }
-      ]
-    },
-    {
-      "seat": "orch.lead",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/orienting-to-an-inherited-seat",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.orienting-to-an-inherited-seat"
-        }
-      ]
-    },
-    {
-      "seat": "orch.lead",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
       "path": ".claude/skills/ponytail",
       "operation": "project",
       "phase": "before_launch",
@@ -1549,81 +607,6 @@
       "seat": "orch.lead",
       "kind": "skills",
       "destinationBase": "seat_cwd",
-      "path": ".claude/skills/queue-handoff",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.queue-handoff"
-        }
-      ]
-    },
-    {
-      "seat": "orch.lead",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/refocusing",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.refocusing"
-        }
-      ]
-    },
-    {
-      "seat": "orch.lead",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/retiring-and-inheriting-a-seat",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.retiring-and-inheriting-a-seat"
-        }
-      ]
-    },
-    {
-      "seat": "orch.lead",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/seat-continuity-and-handover",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.seat-continuity-and-handover"
-        }
-      ]
-    },
-    {
-      "seat": "orch.lead",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/session-compaction-and-restore",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.session-compaction-and-restore"
-        }
-      ]
-    },
-    {
-      "seat": "orch.lead",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
       "path": ".claude/skills/using-the-tui-together",
       "operation": "project",
       "phase": "before_launch",
@@ -1632,6 +615,21 @@
         {
           "path": "agents/workshop/agent.yaml",
           "field": "resources.skills.using-the-tui-together"
+        }
+      ]
+    },
+    {
+      "seat": "orch.lead",
+      "kind": "plugins",
+      "destinationBase": "seat_cwd",
+      "path": ".claude/plugins/openrig-core",
+      "operation": "project",
+      "phase": "before_launch",
+      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
+      "sourceRefs": [
+        {
+          "path": "agents/workshop/agent.yaml",
+          "field": "resources.plugins.openrig-core"
         }
       ]
     },
@@ -1669,186 +667,6 @@
       "seat": "dev.build",
       "kind": "skills",
       "destinationBase": "seat_cwd",
-      "path": ".claude/skills/agent-operated-software",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.agent-operated-software"
-        }
-      ]
-    },
-    {
-      "seat": "dev.build",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/agent-operated-workflows",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.agent-operated-workflows"
-        }
-      ]
-    },
-    {
-      "seat": "dev.build",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/applying-a-permission-policy",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.applying-a-permission-policy"
-        }
-      ]
-    },
-    {
-      "seat": "dev.build",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/claude-compaction-restore",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.claude-compaction-restore"
-        }
-      ]
-    },
-    {
-      "seat": "dev.build",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/delegating-work",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.delegating-work"
-        }
-      ]
-    },
-    {
-      "seat": "dev.build",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/forming-an-openrig-mental-model",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.forming-an-openrig-mental-model"
-        }
-      ]
-    },
-    {
-      "seat": "dev.build",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/loading-addressable-markdown",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.loading-addressable-markdown"
-        }
-      ]
-    },
-    {
-      "seat": "dev.build",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/messaging-the-human",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.messaging-the-human"
-        }
-      ]
-    },
-    {
-      "seat": "dev.build",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/mission-slice-sop",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.mission-slice-sop"
-        }
-      ]
-    },
-    {
-      "seat": "dev.build",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/openrig-operating-model",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.openrig-operating-model"
-        }
-      ]
-    },
-    {
-      "seat": "dev.build",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/openrig-user",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.openrig-user"
-        }
-      ]
-    },
-    {
-      "seat": "dev.build",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/orienting-to-an-inherited-seat",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.orienting-to-an-inherited-seat"
-        }
-      ]
-    },
-    {
-      "seat": "dev.build",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
       "path": ".claude/skills/ponytail",
       "operation": "project",
       "phase": "before_launch",
@@ -1864,81 +682,6 @@
       "seat": "dev.build",
       "kind": "skills",
       "destinationBase": "seat_cwd",
-      "path": ".claude/skills/queue-handoff",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.queue-handoff"
-        }
-      ]
-    },
-    {
-      "seat": "dev.build",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/refocusing",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.refocusing"
-        }
-      ]
-    },
-    {
-      "seat": "dev.build",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/retiring-and-inheriting-a-seat",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.retiring-and-inheriting-a-seat"
-        }
-      ]
-    },
-    {
-      "seat": "dev.build",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/seat-continuity-and-handover",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.seat-continuity-and-handover"
-        }
-      ]
-    },
-    {
-      "seat": "dev.build",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/session-compaction-and-restore",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.session-compaction-and-restore"
-        }
-      ]
-    },
-    {
-      "seat": "dev.build",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
       "path": ".claude/skills/using-the-tui-together",
       "operation": "project",
       "phase": "before_launch",
@@ -1947,6 +690,21 @@
         {
           "path": "agents/workshop/agent.yaml",
           "field": "resources.skills.using-the-tui-together"
+        }
+      ]
+    },
+    {
+      "seat": "dev.build",
+      "kind": "plugins",
+      "destinationBase": "seat_cwd",
+      "path": ".claude/plugins/openrig-core",
+      "operation": "project",
+      "phase": "before_launch",
+      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
+      "sourceRefs": [
+        {
+          "path": "agents/workshop/agent.yaml",
+          "field": "resources.plugins.openrig-core"
         }
       ]
     },
@@ -1984,186 +742,6 @@
       "seat": "dev.review",
       "kind": "skills",
       "destinationBase": "seat_cwd",
-      "path": ".claude/skills/agent-operated-software",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.agent-operated-software"
-        }
-      ]
-    },
-    {
-      "seat": "dev.review",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/agent-operated-workflows",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.agent-operated-workflows"
-        }
-      ]
-    },
-    {
-      "seat": "dev.review",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/applying-a-permission-policy",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.applying-a-permission-policy"
-        }
-      ]
-    },
-    {
-      "seat": "dev.review",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/claude-compaction-restore",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.claude-compaction-restore"
-        }
-      ]
-    },
-    {
-      "seat": "dev.review",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/delegating-work",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.delegating-work"
-        }
-      ]
-    },
-    {
-      "seat": "dev.review",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/forming-an-openrig-mental-model",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.forming-an-openrig-mental-model"
-        }
-      ]
-    },
-    {
-      "seat": "dev.review",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/loading-addressable-markdown",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.loading-addressable-markdown"
-        }
-      ]
-    },
-    {
-      "seat": "dev.review",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/messaging-the-human",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.messaging-the-human"
-        }
-      ]
-    },
-    {
-      "seat": "dev.review",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/mission-slice-sop",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.mission-slice-sop"
-        }
-      ]
-    },
-    {
-      "seat": "dev.review",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/openrig-operating-model",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.openrig-operating-model"
-        }
-      ]
-    },
-    {
-      "seat": "dev.review",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/openrig-user",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.openrig-user"
-        }
-      ]
-    },
-    {
-      "seat": "dev.review",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/orienting-to-an-inherited-seat",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.orienting-to-an-inherited-seat"
-        }
-      ]
-    },
-    {
-      "seat": "dev.review",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
       "path": ".claude/skills/ponytail",
       "operation": "project",
       "phase": "before_launch",
@@ -2179,81 +757,6 @@
       "seat": "dev.review",
       "kind": "skills",
       "destinationBase": "seat_cwd",
-      "path": ".claude/skills/queue-handoff",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.queue-handoff"
-        }
-      ]
-    },
-    {
-      "seat": "dev.review",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/refocusing",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.refocusing"
-        }
-      ]
-    },
-    {
-      "seat": "dev.review",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/retiring-and-inheriting-a-seat",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.retiring-and-inheriting-a-seat"
-        }
-      ]
-    },
-    {
-      "seat": "dev.review",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/seat-continuity-and-handover",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.seat-continuity-and-handover"
-        }
-      ]
-    },
-    {
-      "seat": "dev.review",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/session-compaction-and-restore",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.session-compaction-and-restore"
-        }
-      ]
-    },
-    {
-      "seat": "dev.review",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
       "path": ".claude/skills/using-the-tui-together",
       "operation": "project",
       "phase": "before_launch",
@@ -2262,6 +765,21 @@
         {
           "path": "agents/workshop/agent.yaml",
           "field": "resources.skills.using-the-tui-together"
+        }
+      ]
+    },
+    {
+      "seat": "dev.review",
+      "kind": "plugins",
+      "destinationBase": "seat_cwd",
+      "path": ".claude/plugins/openrig-core",
+      "operation": "project",
+      "phase": "before_launch",
+      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
+      "sourceRefs": [
+        {
+          "path": "agents/workshop/agent.yaml",
+          "field": "resources.plugins.openrig-core"
         }
       ]
     },
@@ -2299,186 +817,6 @@
       "seat": "dev.qa",
       "kind": "skills",
       "destinationBase": "seat_cwd",
-      "path": ".claude/skills/agent-operated-software",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.agent-operated-software"
-        }
-      ]
-    },
-    {
-      "seat": "dev.qa",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/agent-operated-workflows",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.agent-operated-workflows"
-        }
-      ]
-    },
-    {
-      "seat": "dev.qa",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/applying-a-permission-policy",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.applying-a-permission-policy"
-        }
-      ]
-    },
-    {
-      "seat": "dev.qa",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/claude-compaction-restore",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.claude-compaction-restore"
-        }
-      ]
-    },
-    {
-      "seat": "dev.qa",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/delegating-work",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.delegating-work"
-        }
-      ]
-    },
-    {
-      "seat": "dev.qa",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/forming-an-openrig-mental-model",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.forming-an-openrig-mental-model"
-        }
-      ]
-    },
-    {
-      "seat": "dev.qa",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/loading-addressable-markdown",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.loading-addressable-markdown"
-        }
-      ]
-    },
-    {
-      "seat": "dev.qa",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/messaging-the-human",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.messaging-the-human"
-        }
-      ]
-    },
-    {
-      "seat": "dev.qa",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/mission-slice-sop",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.mission-slice-sop"
-        }
-      ]
-    },
-    {
-      "seat": "dev.qa",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/openrig-operating-model",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.openrig-operating-model"
-        }
-      ]
-    },
-    {
-      "seat": "dev.qa",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/openrig-user",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.openrig-user"
-        }
-      ]
-    },
-    {
-      "seat": "dev.qa",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/orienting-to-an-inherited-seat",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.orienting-to-an-inherited-seat"
-        }
-      ]
-    },
-    {
-      "seat": "dev.qa",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
       "path": ".claude/skills/ponytail",
       "operation": "project",
       "phase": "before_launch",
@@ -2494,81 +832,6 @@
       "seat": "dev.qa",
       "kind": "skills",
       "destinationBase": "seat_cwd",
-      "path": ".claude/skills/queue-handoff",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.queue-handoff"
-        }
-      ]
-    },
-    {
-      "seat": "dev.qa",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/refocusing",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.refocusing"
-        }
-      ]
-    },
-    {
-      "seat": "dev.qa",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/retiring-and-inheriting-a-seat",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.retiring-and-inheriting-a-seat"
-        }
-      ]
-    },
-    {
-      "seat": "dev.qa",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/seat-continuity-and-handover",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.seat-continuity-and-handover"
-        }
-      ]
-    },
-    {
-      "seat": "dev.qa",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
-      "path": ".claude/skills/session-compaction-and-restore",
-      "operation": "project",
-      "phase": "before_launch",
-      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
-      "sourceRefs": [
-        {
-          "path": "agents/workshop/agent.yaml",
-          "field": "resources.skills.session-compaction-and-restore"
-        }
-      ]
-    },
-    {
-      "seat": "dev.qa",
-      "kind": "skills",
-      "destinationBase": "seat_cwd",
       "path": ".claude/skills/using-the-tui-together",
       "operation": "project",
       "phase": "before_launch",
@@ -2577,6 +840,21 @@
         {
           "path": "agents/workshop/agent.yaml",
           "field": "resources.skills.using-the-tui-together"
+        }
+      ]
+    },
+    {
+      "seat": "dev.qa",
+      "kind": "plugins",
+      "destinationBase": "seat_cwd",
+      "path": ".claude/plugins/openrig-core",
+      "operation": "project",
+      "phase": "before_launch",
+      "condition": "Subject to configured destinations, runtime support and existing-file conflicts at installation or launch.",
+      "sourceRefs": [
+        {
+          "path": "agents/workshop/agent.yaml",
+          "field": "resources.plugins.openrig-core"
         }
       ]
     },
@@ -2634,9 +912,6 @@
         },
         {
           "path": "agents/workshop/pi-skills.lock.json"
-        },
-        {
-          "path": "agents/workshop/skills/openrig-user/SKILL.md"
         },
         {
           "path": "bundle.yaml"
@@ -2849,6 +1124,50 @@
     }
   ],
   "unknownBeforeLaunch": [
+    {
+      "seat": "orch.lead",
+      "subject": "openrig-home:plugins/openrig-core",
+      "reason": "Resolved on the installing host at launch; contents were not read.",
+      "sourceRefs": [
+        {
+          "path": "agents/workshop/agent.yaml",
+          "field": "resources.plugins.openrig-core"
+        }
+      ]
+    },
+    {
+      "seat": "dev.build",
+      "subject": "openrig-home:plugins/openrig-core",
+      "reason": "Resolved on the installing host at launch; contents were not read.",
+      "sourceRefs": [
+        {
+          "path": "agents/workshop/agent.yaml",
+          "field": "resources.plugins.openrig-core"
+        }
+      ]
+    },
+    {
+      "seat": "dev.review",
+      "subject": "openrig-home:plugins/openrig-core",
+      "reason": "Resolved on the installing host at launch; contents were not read.",
+      "sourceRefs": [
+        {
+          "path": "agents/workshop/agent.yaml",
+          "field": "resources.plugins.openrig-core"
+        }
+      ]
+    },
+    {
+      "seat": "dev.qa",
+      "subject": "openrig-home:plugins/openrig-core",
+      "reason": "Resolved on the installing host at launch; contents were not read.",
+      "sourceRefs": [
+        {
+          "path": "agents/workshop/agent.yaml",
+          "field": "resources.plugins.openrig-core"
+        }
+      ]
+    },
     {
       "subject": "host and native settings",
       "reason": "Effective permissions, login, model availability, runtime versions, host catalogs/plugins and configured paths are not checked before launch.",
