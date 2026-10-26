@@ -1,0 +1,110 @@
+schema_version: 2
+name: q1r073-word-team
+version: 0.1.0
+created_at: 2026-10-26T17:31:51.664Z
+rig_spec: rig.yaml
+agents:
+  - name: implementer
+    version: "1.0"
+    path: agents/implementer
+    original_ref: path:/home/q1c073/.local/lib/node_modules/@openrig/cli/daemon/specs/agents/development/implementer
+    hash: 6b39e5962f973f9e9fea9a76420829d50497b429ebf38cd2127ce3d65e5269c8
+    import_entries:
+      - name: shared
+        version: "1.0"
+        path: agents/shared
+        original_ref: local:../../shared
+        hash: 6d682fc6ffdec0214dfb72c2b03886d47876adea820464481021ad6181d5e8e7
+  - name: qa
+    version: "1.0"
+    path: agents/qa
+    original_ref: path:/home/q1c073/.local/lib/node_modules/@openrig/cli/daemon/specs/agents/development/qa
+    hash: 679a049da88af8dc69c3295407bfabf8477142da9f9d222a3304303c4dafacc6
+    import_entries:
+      - name: shared
+        version: "1.0"
+        path: agents/shared
+        original_ref: local:../../shared
+        hash: 6d682fc6ffdec0214dfb72c2b03886d47876adea820464481021ad6181d5e8e7
+culture_file: CULTURE.md
+integrity:
+  algorithm: sha256
+  files:
+    CULTURE.md: 1d1b9799e68bbacee5887fbc7a499bd88a20d7abd100ac3e7c886d17c932db07
+    agents/implementer/agent.yaml: 8cc291796e8a182072c08316b6352ffafe8fe26c4e24a5d847ba5c6c78bca14c
+    agents/implementer/guidance/role.md: dd6eae4903d032d841ceb244d4aee3a927d31bcd9c778705489155bc5cc0eccb
+    agents/qa/agent.yaml: c5a1dcf6e2786099671bce9cd0fbfffb626db2c4018a16cc7bfd70eed1a6649c
+    agents/qa/guidance/role.md: 0c3b632f54431bf8868bab3fa71fa1d496e28161a362b7aa97eadc69ae055f8a
+    agents/shared/agent.yaml: 6d682fc6ffdec0214dfb72c2b03886d47876adea820464481021ad6181d5e8e7
+    agents/shared/runtime/claude-activity-hooks.json: 1555916b0c13a02eeca2767f3d90822320572704db189d8c97e2d1b62ca57428
+    agents/shared/runtime/claude-mcp.fragment.json: ff1f9ed2cf9b13172f1efa6f5153b389c1518f54efe520bc4a4396b3fc048677
+    agents/shared/runtime/claude-settings.fragment.json: f7ee42b207129c7ef195e43cdce57de2ee387f1f256222ad586a91fb8a248f82
+    agents/shared/runtime/codex-config.fragment.toml: 9e28e9bd20de05c291a3ca91109421665fcf96ca702b69b1a971a06075c3a493
+    agents/shared/skills/core/agent-starters/SKILL.md: 8e8961f44fccb812f39e01174a331dab24f153ceaba91925f1e42371836cdec0
+    agents/shared/skills/core/agent-startup-and-context-ingestion/SKILL.md: 347f28a9567b4b8d8669aff6946229f53144e0c139aca2cbe77e0eb93a87f1b1
+    agents/shared/skills/core/cross-host-rig-commands/SKILL.md: 79ee21fa7da143aa4c3defa8fbb78c0a87ae822c69f1a99cd1acf50a9931ce4d
+    agents/shared/skills/core/human-in-the-loop/SKILL.md: 14cf0c4a0dc89179121465d4b8d81d40406427351adcdc34f875097d1e6e9ab2
+    agents/shared/skills/core/messaging-the-human/SKILL.md: 680ca50b22b0aec280a6c7bb5e118cda1dca991742f42f9a5b74e138448753fe
+    agents/shared/skills/core/openrig-architect/SKILL.md: 51b65d2e878eeaf2af2f23974677d6a3272728024f3a6854bf3a646567fd3ae6
+    agents/shared/skills/core/openrig-cmux/SKILL.md: 73a86eac45d68b16a38fc0a4438713c634d86061073dac96a4d9e656ea5d34dc
+    agents/shared/skills/core/openrig-herdr/SKILL.md: cb39b51f954ca89e8d7ec0f8b3f326476d5c4dd3bc17dbd47e6379aa630e7b22
+    agents/shared/skills/core/openrig-skills/SKILL.md: bdd6594ae1108455103239d39694c865cc40d3f7d9f24cd3566a18397df270da
+    agents/shared/skills/core/openrig-software-factory/SKILL.md: 7a57815f3c6865d5cc42c063cccdca998d6ee100a82812362d0c81f314465b77
+    agents/shared/skills/core/openrig-software-factory/references/worked-example.md: 64dec0e832692b655ffc1ca9f72e96f221f78b8bc97f73775198f188b502f147
+    agents/shared/skills/core/openrig-upgrade/SKILL.md: 5653ccb547ef22ecb4afe3d9a376e522997d1ebf44639690a875cdc5d7447951
+    agents/shared/skills/core/openrig-upgrade/scripts/backup-sqlite.mjs: 52fe3015a0399986b586b6603e0664f61136d2210611b1638110a7b6b06e38b4
+    agents/shared/skills/core/openrig-upgrade/scripts/inspect-upgrade.mjs: 0f9239f3f8ad75885e985433576ffba9cf155dd8616801dd73d60bf3e9990a2a
+    agents/shared/skills/core/openrig-upgrade/scripts/migrate-telemetry-state-0.5.9.mjs: 3d7bdb43ce0618cf1d939e08c3f91531d866ac5b6fec5c4c3e4308d61e2bfc9f
+    agents/shared/skills/core/openrig-upgrade/scripts/refresh-managed-plugin.mjs: cd117e3e891d6ad632f88a0ad10f5fc8a68ea724ce2715c89f45b6000307cf81
+    agents/shared/skills/core/rig-bundles-and-shareable-artifacts/SKILL.md: 8c5fe560daaaa926808070e1b2cf3633cc655e6552562cdfbf7c1623b0548c9d
+    agents/shared/skills/core/rig-lifecycle/SKILL.md: 8346e01d532795b24c3dba63413ca662c7b44cc5eed39ee2e85568580f40adca
+    agents/shared/skills/core/session-source-fork/SKILL.md: c5381d130e0a58c2dd6669770a391314b0db0797df07641cf2d3f9804fac21a2
+    agents/shared/skills/core/specification-system/SKILL.md: 5226d6e8b1362df89ba3d5afd82e4b4add355870132ca4b140d7f9f4324ffdc1
+    agents/shared/skills/core/topology-mutation-and-seat-management/SKILL.md: 527ca074432ce6513fb25cd27e8c709dabe0c91361b8999e09b272f3813abe62
+    agents/shared/skills/core/watchdog/SKILL.md: 24b2e756e3e9d067fa93a4b5fa5f48a5cce511e8b1a5b360b1c39bc09bc95d82
+    agents/shared/skills/pm/backlog-capture/SKILL.md: 345c2b47fc85e48c15c0d42bbb48fb27dd3b0ceec36bf59dc6ed20daaea47a84
+    agents/shared/skills/pm/context-builder/SKILL.md: 0134c9b0a9f196565109f7f51b6ec78d5c3e4b5982a0d7105a93b29952625b3c
+    agents/shared/skills/pm/exec-summary/SKILL.md: ada0f42337920e7acdd94e24cad4f5c269b057e750f4a7fc627ea9efbc02fcb6
+    agents/shared/skills/pm/office-hours/SKILL.md: c09b92957e709e43b28186883aca9e73218b412a69355051b76700efac88b4cf
+    agents/shared/skills/pm/plan-review/SKILL.md: 42f1b746d9ceae32587fc754fcc96462af44ba7f0078407f505d7a30b88a1469
+    agents/shared/skills/pm/requirements-writer/SKILL.md: 04cfb8853553f1538fd202e9804e14e6b259f3a4c12b5f255c30169cf66ed0af
+    agents/shared/skills/pm/ui-mockup/SKILL.md: a597fad7dcdebf43e74e01a607e12eabf848c831c96be3da2f1aeeb12f82ef08
+    agents/shared/skills/pods/development-team/SKILL.md: 4663daa9a4ab845a24f51553671e5359f3a29a44b774e7cf378464976256556b
+    agents/shared/skills/pods/development-team/references/refactoring.md: c73addf5cc5f51806ab31ab5165a8183dd616bd72526905695245e54c29301af
+    agents/shared/skills/pods/orchestration-team/SKILL.md: 616f332495a8e6fb5b6a3933442c81008158f9d3790a55783860ccbcfa7d6047
+    agents/shared/skills/pods/oversight-team/SKILL.md: a48de41350453a09b231e01a89cc1dd3d4a64e082df090a7b0e04034227d2bb4
+    agents/shared/skills/pods/review-team/SKILL.md: 17d73cdf9623e05627aa823848968b0720d35e700e75ed45ac3042df1fa73f30
+    agents/shared/skills/process/agent-browser/LICENSE.txt: 014bb31e83d5c2e76aea1cc6e82217346ab41362f32cb355ad0f5c10aa0aeaff
+    agents/shared/skills/process/agent-browser/LOCAL-INSIGHTS.md: 3e37c298514506099c8212e32c58e78cd77781637a368a5db1acf1982d93a0f4
+    agents/shared/skills/process/agent-browser/OPENRIG.md: c53e4a9923c8425dee6968d9fa72b91f72845a893a6b48556493526c95c05ceb
+    agents/shared/skills/process/agent-browser/SKILL.md: 13139d7e255313711b3874d3989937e81f94c68bce341b59c3465a1877a70943
+    agents/shared/skills/process/context-engineering/SKILL.md: ef052238060410f8f49d94baaede14e569f3c943a7dba79ed98d4fc0a117af64
+    agents/shared/skills/process/dogfood/LICENSE.txt: 014bb31e83d5c2e76aea1cc6e82217346ab41362f32cb355ad0f5c10aa0aeaff
+    agents/shared/skills/process/dogfood/SKILL.md: de5c6bf724bcca436b19af9aac1af3138eb96a24151d21e2d8b9a316494b5c85
+    agents/shared/skills/process/dogfood/references/issue-taxonomy.md: dee7e925f7fe001903de6cc14f9656bcda90d069bbf65a2273f22202efebba09
+    agents/shared/skills/process/dogfood/templates/dogfood-report-template.md: 55eef9286e32e595dcfca30db76352e9f1d149a78b60b54644eb701072364f35
+    agents/shared/skills/process/frontend-design/LICENSE.txt: 0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594
+    agents/shared/skills/process/frontend-design/SKILL.md: 3897488693335f3b350292abe067e9f4a39a64af5ac6b1feb82074a36930273d
+    agents/shared/skills/process/systematic-debugging/LICENSE.txt: a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400
+    agents/shared/skills/process/systematic-debugging/SKILL.md: d51e8f57ecdfebbccf970907b801818aeeb7bd0c7aa7343678e4353a5b2e458f
+    agents/shared/skills/process/systematic-debugging/condition-based-waiting-example.ts: 40ae5ebe497fdf310200e43fe986552546d0a22837c0d39e855db1cfd33eb88e
+    agents/shared/skills/process/systematic-debugging/condition-based-waiting.md: e89fec8400d6cd50f43407cec9fab50976ba4d55d0ec2eb51c0bd68036b54c26
+    agents/shared/skills/process/systematic-debugging/defense-in-depth.md: 1e175fb86fc357e58c6aebf5441e481e1b7868b4380c0456b63a17eefbd18ba7
+    agents/shared/skills/process/systematic-debugging/find-polluter.sh: a9b088099dde5a07e303de5ecf07604f2b9b608770125b481c8db52b85227c51
+    agents/shared/skills/process/systematic-debugging/root-cause-tracing.md: a81bee9448794d261b4aca8487c595d11ff4bd4e10a5f96bca1117dd32527050
+    agents/shared/skills/process/test-driven-development/LICENSE.txt: a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400
+    agents/shared/skills/process/test-driven-development/SKILL.md: 359dd92f8730cf4696c734a7dd6519f24887d24b3c049f89854b712a8b374509
+    agents/shared/skills/process/test-driven-development/testing-anti-patterns.md: bde453bc258f06543987477c837939afaa774ea2acbd9f308d702fc452bc4283
+    agents/shared/skills/process/verification-before-completion/LICENSE.txt: a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400
+    agents/shared/skills/process/verification-before-completion/SKILL.md: 6e75f73be76c8d0589c77259268f095d938cba477602db911dc5063926716f50
+    agents/shared/skills/process/verification-before-completion/references/performance-claims.md: 7db2a496a9423ab409b4e3819f64cd6abd7dff2413ce78232e6d154e62126884
+    rig.yaml: 8ae4506f5fa86642e3d25fcc694ed7640c4e65362b8d2c9d6d241b0225d9a65a
+assembler:
+  openrigVersion: 0.7.3
+provenance:
+  created_at: 2026-10-26T17:31:51.664Z
+  source_host: vps-3c8c83ae
+  daemon_version: 0.7.3
+  cli_version: 0.7.3
+configuration:
+  id: dev.build=claude-code,dev.review=claude-code
