@@ -1,0 +1,24 @@
+version: "0.2"
+name: q1r074-word-team
+culture_file: CULTURE.md
+pods:
+  - id: dev
+    label: Project
+    members:
+      - id: build
+        agent_ref: local:agents/implementer
+        profile: default
+        runtime: claude-code
+        cwd: /home/q1c074/project
+        restore_policy: resume_if_possible
+      - id: review
+        agent_ref: local:agents/qa
+        profile: default
+        runtime: claude-code
+        cwd: /home/q1c074/project
+        restore_policy: resume_if_possible
+    edges:
+      - kind: delegates_to
+        from: build
+        to: review
+edges: []
