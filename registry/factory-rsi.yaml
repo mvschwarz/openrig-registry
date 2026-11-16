@@ -1,7 +1,7 @@
 schema: openrig.registry-entry/v1
 slug: factory-rsi
 name: factory-rsi reference
-summary: "A seven-agent team that plans, builds, tests, reviews, tries out and releases changes, and waits for you before anything is published. It's kept as a reference and hasn't been run on current OpenRig."
+summary: "A seven-agent team that plans, builds, tests, reviews, tries out and releases changes, and waits for you before anything is published. It's kept as a reference, with no verified run on current OpenRig."
 source:
   repository: https://github.com/mvschwarz/openrig-world
   folder: rigs/launch/factory-rsi
