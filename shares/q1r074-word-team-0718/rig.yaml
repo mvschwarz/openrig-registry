@@ -1,0 +1,33 @@
+version: "0.2"
+name: q1r074-word-team
+culture_file: CULTURE.md
+docs:
+  - path: README.md
+pods:
+  - id: dev
+    label: Project
+    members:
+      - id: build
+        agent_ref: local:agents/implementer
+        profile: default
+        runtime: claude-code
+        cwd: /home/q1c074/project
+        restore_policy: resume_if_possible
+        claude_auto_mode:
+          environment:
+            - "$defaults"
+            - "Eval 0.7.18 registry test fixture: a throwaway team, never a real listing"
+          soft_deny: ["$defaults"]
+        process_limits:
+          tasks_max: 512
+      - id: review
+        agent_ref: local:agents/qa
+        profile: default
+        runtime: claude-code
+        cwd: /home/q1c074/project
+        restore_policy: resume_if_possible
+    edges:
+      - kind: delegates_to
+        from: build
+        to: review
+edges: []
